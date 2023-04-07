@@ -2,11 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Карточка объекта: улица Говна д.3</title>
+    <title>Главная</title>
 </head>
 <body>
-    <form>
-        <input>tasdasdasdasdasd
-    </form>
+<!--Блок мини-карточки-->
+    <div class="mini-card">
+        <img src="{{ card.img }}" alt="Изображение объекта">
+        <p class="adress">{{ card.adress }}</p>
+        <p class="condition">Объект в состоянии {{ card.condition }}</p>
+        <p class="square">{{ card.square }} м²</p>
+        <p class="owner">Собственник {{ card.owner }}</p>
+        <p class="user">Фактический пользователь {{ card.user }}</p>
+        <div class="btn-more">Подробнее...</div>
+    </div>
+
+<!--Блок полной карточки-->
+    <div class="full-card">
+        {% for img in imgs %}
+            <img src="{{ card.img }}" alt="Изображение объекта">
+        {% endfor %}
+        <p class="adress">{{ card.adress }}</p>
+        <div class="leftsect">
+            <p class="condition">Объект в состоянии{{ card.condition }}</p>
+            <p class="owner">Собственник {{ card.owner }}</p>
+            <p class="identified">Выявлен {{ card.identified }}</p>
+            <p class="fullcondition">Состояние: {{ card.fullcondition }}</p>
+            <p class="quantity">{{ card.quantity }} объект</p>
+        </div>
+        <div class="rightsect">
+            <p class="square">{{ card.square }} м²</p>
+            <p class="user">Фактический пользователь {{ card.user }}</p>
+            <p class="dateappeal">Дата обращения {{ card.dateappeal }}</p>
+            <p class="handcor">Ручная корректировка {{ card.hendcor }}</p>
+            <p class="commenthandcor">Комментарий к ручной корректировке: {{ card.commenthandcor }}</p>
+        </div>
+    </div>
+
 </body>
 </html>
