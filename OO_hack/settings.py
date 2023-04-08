@@ -56,7 +56,7 @@ ROOT_URLCONF = 'OO_hack.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'Moscow/Europe'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
