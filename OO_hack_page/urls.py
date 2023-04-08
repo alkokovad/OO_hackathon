@@ -3,5 +3,5 @@ from django.urls import path
 from OO_hack_page import views
 
 urlpatterns = [
-    path('', views.CardsEditView.as_view(), name='cards_edit'),
+    path('', views.CardsEditView.as_view(), name=''),
 ]
