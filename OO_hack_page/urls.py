@@ -1,10 +1,8 @@
 from django.urls import path
-from . import views
 
+from OO_hack_page import views
 
 urlpatterns = [
-    path('login/', views.sign_in, name='login'),
-    path('logout/', views.sign_in, name='logout'),
+    path('cards_list/', views.CardsListView.as_view(), name='cards_list'),
+    path('dashboard/', views.DashBoardView.as_view(), name='dashboard'),
 ]
-
-

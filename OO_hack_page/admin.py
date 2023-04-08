@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import REstate, Owner
 
-# Register your models here.
+
+@admin.register(REstate)
+class REstateAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Owner)
+class OwnerAdmin(admin.ModelAdmin):
+    pass
