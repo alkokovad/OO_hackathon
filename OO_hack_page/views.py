@@ -22,6 +22,4 @@ class DashBoardView(View):
     template_name = 'DashBoard/dashboard.html'
 
     def get(self, request, *args, **kwargs):
-        cards_list = REstate.objects.all()
-        context = {'cards_list': cards_list}
-        return render(request, DashBoardView.template_name, context=context)
+        pass

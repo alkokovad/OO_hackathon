@@ -31,19 +31,20 @@ status = [
 ]
 
 TF = [
-    ('FL','Нет'),
-    ('TR','Да'),
+    ('FL', 'Нет'),
+    ('TR', 'Да'),
 ]
 
 metro = [
-    ('m','M^2'),
-    ('g','Gect'),
+    ('m', 'M^2'),
+    ('g', 'Gect'),
 ]
 
 wall = [
-    ('bet','Beton'),
-    ('Woo','Wood'),
+    ('bet', 'Beton'),
+    ('Woo', 'Wood'),
 ]
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile", default='None')
@@ -67,34 +68,33 @@ class REstate(models.Model):
     object_square = models.DecimalField(max_digits=9, decimal_places=2)
     object_owner = models.ForeignKey('Owner', on_delete=models.CASCADE)
     object_client = models.CharField()
-    object_photo = ArrayField(models.CharField(blank= True),blank= True)
-    object_video = ArrayField(models.CharField(blank= True),blank= True)
-    object_inRec = models.CharField(choices=TF,default= 'FL')
-    object_LetterADO = models.IntegerField(blank= True)
-    object_LetterDate = models.DateField(blank= True)
-    object_HandCorr = models.CharField(choices=TF,default= 'FL')
+    object_photo = ArrayField(models.CharField(blank=True), blank=True)
+    object_video = ArrayField(models.CharField(blank=True), blank=True)
+    object_inRec = models.CharField(choices=TF, default='FL')
+    object_LetterADO = models.IntegerField(blank=True)
+    object_LetterDate = models.DateField(blank=True)
+    object_HandCorr = models.CharField(choices=TF, default='FL')
     object_HandCorrCom = models.CharField(blank=True)
     object_Chekers = models.CharField()
     object_viewing = models.CharField()
-    object_addition = models.CharField(blank= True)
-    object_objectCount = models.IntegerField(default= 1)
-    object_demont = models.CharField(choices= TF,default='FL')
-    object_demontConf = models.DateField(blank= True)
-    object_demontWorker = models.CharField(blank= True)
-    object_Comment = models.CharField(blank= True)
-    object_religion = models.CharField(choices= TF,default='FL')
-    object_OKN = models.CharField(choices= TF,default='FL')
-    object_metro = models.CharField(choices= metro,default='m')
-    object_sqareBTI = models.DecimalField(max_digits=9, decimal_places=2,blank=True)
+    object_addition = models.CharField(blank=True)
+    object_objectCount = models.IntegerField(default=1)
+    object_demont = models.CharField(choices=TF, default='FL')
+    object_demontConf = models.DateField(blank=True)
+    object_demontWorker = models.CharField(blank=True)
+    object_Comment = models.CharField(blank=True)
+    object_religion = models.CharField(choices=TF, default='FL')
+    object_OKN = models.CharField(choices=TF, default='FL')
+    object_metro = models.CharField(choices=metro, default='m')
+    object_sqareBTI = models.DecimalField(max_digits=9, decimal_places=2, blank=True)
     object_sqareSelfBuild = models.DecimalField(max_digits=9, decimal_places=2)
     object_negativC = models.IntegerField(default=0)
     object_yearST = models.DateField()
     object_yearSP = models.DateField()
-    object_sqareSpot = models.DecimalField(max_digits=9, decimal_places=2,blank=True)
-    object_hight = models.DecimalField(max_digits=9, decimal_places=2,blank=True)
-    object_WallMat = models.CharField(choices= wall,default='bet')
+    object_sqareSpot = models.DecimalField(max_digits=9, decimal_places=2, blank=True)
+    object_hight = models.DecimalField(max_digits=9, decimal_places=2, blank=True)
+    object_WallMat = models.CharField(choices=wall, default='bet')
     object_conts = models.CharField()
-
 
 
 class Workgroup(models.Model):
@@ -103,6 +103,7 @@ class Workgroup(models.Model):
     group_head = models.CharField()
     group_type = models.CharField()
     group_OIV = models.CharField()
+
 
 class Workgroup_time(models.Model):
     workgroup = models.CharField(primary_key=Workgroup)
