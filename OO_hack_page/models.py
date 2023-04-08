@@ -1,6 +1,8 @@
 import django.contrib.auth.backends
+from django.contrib.postgres.fields import DateRangeField
 from django.db import models
 from django.contrib.auth.models import User
+import datetime
 
 types = [
     ('LV', 'Жилое помещение'),
@@ -52,3 +54,17 @@ class REstate(models.Model):
     object_client = models.CharField()
     object_photo = models.CharField()
     object_video = models.CharField()
+
+
+class Workgroup(models.Model):
+    group_name = models.CharField()
+    group_spec = models.CharField()
+    group_head = models.CharField()
+
+
+class Workgroup_time(models.Model):
+    workgroup = models.CharField(primary_key=Workgroup)
+    object_ES = models.ForeignKey('REstate', on_delete=models.CASCADE)
+    task = models.CharField()
+    date_start = models.DateField()
+    date_end = models.DateField()
