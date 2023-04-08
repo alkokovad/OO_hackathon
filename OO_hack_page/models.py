@@ -1,9 +1,6 @@
-import django.contrib.auth.backends
-from django.contrib.postgres.fields import DateRangeField
 from django.db import models
-from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
-import datetime
+
 
 types = [
     ('LV', 'Жилое помещение'),
@@ -44,16 +41,6 @@ wall = [
     ('bet', 'Beton'),
     ('Woo', 'Wood'),
 ]
-
-
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile", default='None')
-    description = models.TextField(blank=True, null=True)
-    location = models.CharField(max_length=30, blank=True)
-    date_joined = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    is_organizer = models.BooleanField(default=False)
-
 
 class Owner(models.Model):
     name = models.CharField()
