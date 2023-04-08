@@ -1,0 +1,22 @@
+section {
+    display: flex;
+
+}
+
+.info_sec_div {
+    min-width: 40%;
+    border: none;
+    boreder-radius: 20px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)}
+
+input {
+    max-length: 100%;
+    margin: auto;
+    border: none;
+    border-radius: 9px;
+}
