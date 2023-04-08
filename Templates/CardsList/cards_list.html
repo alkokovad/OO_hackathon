@@ -9,55 +9,59 @@
 {% endblock css %}
 
 {% block main %}
+{% for card in cards_list %}
 <!--Блок мини-карточки-->
 <div class="mini-card">
     <div class="container">
         <div class="row">
-            <img class="col-3" src="{{ card.img }}" alt="Изображение объекта">
+            <img class="col-3" src="{{ card.object_photo }}" alt="Изображение объекта">
             <div class="col-9">
                 <div class="row">
-                    <h1 class="adress">{{ card.adress }}</h1>
-                    <p class="condition"><b>Объект в состоянии </b>{{ card.condition }}</p>
-                    <p class="square"><b>{{ card.square }} м²</b></p>
-                    <p class="owner"><b>Собственник</b> {{ card.owner }}</p>
-                    <p class="user"><b>Фактический пользователь </b>{{ card.user }}</p>
+                    <h1 class="adress">{{ card.object_state }}, {{ card.object_dist }}, {{ card.object_adress }}</h1>
+                    <p class="condition"><b>Объект в состоянии </b>{{ card.object_status }}</p>
+                    <p class="square"><b>{{ card.object_square }} м²</b></p>
+                    <p class="owner"><b>Собственник</b> {{ card.object_owner }}</p>
+                    <p class="user"><b>Фактический пользователь </b>{{ card.object_client }}</p>
                     <div class="btn-more text-primary "><b><u>Подробнее...</u></b></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endfor %}
 
 <!--Блок полной карточки-->
-<div class="full-card">
-    <div class="container">
-        <div class="row">
-            {% for img in imgs %}
-            <img class="col-3" src="{{ card.img }}" alt="Изображение объекта">
-            {% endfor %}
-        </div>
-        <div class="row">
-            <h1 class="adress">{{ card.adress }}</h1>
-        </div>
-        <div class="row">
-            <div class="leftsect col-5">
-                <p class="condition"><b>Объект в состоянии</b>{{ card.condition }}</p>
-                <p class="owner"><b>Собственник</b>{{ card.owner }}</p>
-                <p class="identified"><b>Выявлен </b>{{ card.identified }}</p>
-                <p class="fullcondition"><b>Состояние: </b>{{ card.fullcondition }}</p>
-                <p class="quantity"><b>{{ card.quantity }} объект</b></p>
-            </div>
-            <div class="col-1"></div>
-            <div class="rightsect col-6">
-                <p class="square">{{ card.square }} м²</b></p>
-                <p class="user"><b>Фактический пользователь </b>{{ card.user }}</p>
-                <p class="dateappeal"><b>Дата обращения </b>{{ card.dateappeal }}</p>
-                <p class="handcor"><b>Ручная корректировка </b>{{ card.hendcor }}</p>
-                <p class="commenthandcor"><b>Комментарий к ручной корректировке: </b>{{ card.commenthandcor }}</p>
-            </div>
-        </div>
-    </div>
-</div>
+
+<!--<div class="full-card">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            {% for img in imgs %}-->
+<!--            <img class="col-3" src="{{ card.img }}" alt="Изображение объекта">-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <h1 class="adress">{{ card.adress }}</h1>-->
+<!--        </div>-->
+<!--        <div class="row">-->
+<!--            <div class="leftsect col-5">-->
+<!--                <p class="condition"><b>Объект в состоянии</b>{{ card.condition }}</p>-->
+<!--                <p class="owner"><b>Собственник</b>{{ card.owner }}</p>-->
+<!--                <p class="identified"><b>Выявлен </b>{{ card.identified }}</p>-->
+<!--                <p class="fullcondition"><b>Состояние: </b>{{ card.fullcondition }}</p>-->
+<!--                <p class="quantity"><b>{{ card.quantity }} объект</b></p>-->
+<!--            </div>-->
+<!--            <div class="col-1"></div>-->
+<!--            <div class="rightsect col-6">-->
+<!--                <p class="square"><b>{{ card.square }} м²</b></p>-->
+<!--                <p class="user"><b>Фактический пользователь </b>{{ card.user }}</p>-->
+<!--                <p class="dateappeal"><b>Дата обращения </b>{{ card.dateappeal }}</p>-->
+<!--                <p class="handcor"><b>Ручная корректировка </b>{{ card.hendcor }}</p>-->
+<!--                <p class="commenthandcor"><b>Комментарий к ручной корректировке: </b>{{ card.commenthandcor }}</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
 {% endblock main %}
 
 {% block js %}

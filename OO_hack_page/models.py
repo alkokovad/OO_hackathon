@@ -13,7 +13,7 @@ types = [
     ('OF', 'Офис'),
     ('SM', 'Супермаркет'),
     ('TC', 'Торговый центр'),
-    ('OR','Другое')
+    ('OR', 'Другое')
 ]
 status = [
     ('EX', 'Введено в экспаутацию'),
@@ -23,17 +23,20 @@ status = [
     ('DE', 'Назначено под снос'),
     ('NA', 'Статус не определен'),
 ]
+
+
 class Owner(models.Model):
     name = models.CharField()
 
+
 class REstate(models.Model):
-    object_state = models.CharField()
-    object_dist = models.CharField()
-    object_adress = models.CharField()
-    object_type = models.CharField(choices=types,default= 'OR')
-    object_status = models.CharField(choices=status,default= 'NA')
-    object_square = models.DecimalField(max_digits=9,decimal_places=2)
-    object_owner = models.ForeignKey('Owner',on_delete= models.CASCADE)
-    object_client = models.CharField()
-    object_photo = models.CharField()
-    object_video = models.CharField()
+    object_state = models.CharField('State')
+    object_dist = models.CharField('District')
+    object_adress = models.CharField('Adress')
+    object_type = models.CharField('Type', choices=types, default='OR')
+    object_status = models.CharField('Status', choices=status, default='NA')
+    object_square = models.DecimalField('Square', max_digits=9, decimal_places=2)
+    object_owner = models.ForeignKey('Owner', on_delete=models.CASCADE)
+    object_client = models.CharField('Client')
+    object_photo = models.CharField('Photo')
+    object_video = models.CharField('Video')
