@@ -1,3 +1,4 @@
+import django.contrib.auth.backends
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 
@@ -90,6 +91,20 @@ class Workgroup(models.Model):
     group_head = models.CharField()
     group_type = models.CharField()
     group_OIV = models.CharField()
+
+
+class Workgroup_time(models.Model):
+    workgroup = models.CharField(primary_key=Workgroup)
+    object_ES = models.ForeignKey('REstate', on_delete=models.CASCADE)
+    task = models.CharField()
+    date_start = models.DateField()
+    date_end = models.DateField()
+
+
+class Workgroup(models.Model):
+    group_name = models.CharField()
+    group_spec = models.CharField()
+    group_head = models.CharField()
 
 
 class Workgroup_time(models.Model):
