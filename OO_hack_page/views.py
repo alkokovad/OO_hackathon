@@ -12,6 +12,11 @@ class CardsListView(View):
         context = {'cards_list': cards_list}
         return render(request, CardsListView.template_name, context=context)
 
+    def post(self, request, *args, **kwargs):
+        cards_list = REstate.objects.get(pk=kwargs['pk'])
+        context = {'cards_list': cards_list}
+        return render(request, CardsListView.template_name, context=context)
+
 
 class DashBoardView(View):
     template_name = 'DashBoard/dashboard.html'
