@@ -1,20 +1,29 @@
 * {
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
 body {
     background: white;
     margin: 0 10% 0 10%;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
+
 }
 
-.mini-card {
+img {
+    border-radius: 18px;
+    max-height: 300px;
+}
+
+.mini-card, .full-card {
     border-radius: 18px;
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    margin-top: 40px;
+}
 
-
+.leftsect, .rightsect {
+    margin-top: 20px;
+    border-radius: 18px;
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
