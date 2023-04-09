@@ -10,5 +10,19 @@
 {% endblock css %}
 
 {% block main %}
-
+<div class="container">
+    <div class="row">
+        {% for dash in dashboards %}
+        <div class="col-5 dash">
+            <h1>{ dash.work }</h1>
+            <p><b>Дата начала работ:</b>{ dash.start }</p>
+            <p><b>Дата конца работ:</b>{ dash.finish }</p>
+            <p><b>Статус работы:</b>{ dash.status }</p>
+            <p><b>Ответсвенный:</b>{ dash.responsiblman }</p>
+            <p><b>Ответственная рабочая группа:</b>{ dash.responsiblegroup }</p>
+            <a href="{ dash.packdoc }"><b>Пакет документов</b></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock main %}
