@@ -22,4 +22,4 @@ class DashBoardView(View):
     template_name = 'DashBoard/dashboard.html'
 
     def get(self, request, *args, **kwargs):
-        pass
+        return render(request, CardsListView.template_name)
