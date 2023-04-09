@@ -12,6 +12,7 @@ body {
 img {
     border-radius: 18px;
     max-height: 300px;
+    padding: 10px;
 }
 
 .mini-card, .full-card {
