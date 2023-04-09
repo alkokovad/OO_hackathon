@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
-from .models import REstate
+from .models import REstate, Workgroup_time
 
 
 class CardsListView(View):
@@ -22,4 +22,6 @@ class DashBoardView(View):
     template_name = 'DashBoard/dashboard.html'
 
     def get(self, request, *args, **kwargs):
-        return render(request, CardsListView.template_name)
+        dashboards = Workgroup_time.objects.all()
+        context = {'dashboards': dashboards}
+        return render(request, DashBoardView.template_name, context=context)
