@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'OO_hack.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'oo_hack',
         'USER': 'postgres',
         'PASSWORD': 'OO_hack',
         'HOST': 'localhost',
