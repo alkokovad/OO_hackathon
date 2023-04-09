@@ -145,7 +145,7 @@
                     <label for="condition" class="form-label">Состояние объекта</label>
                     <select id="condition" name="condition" class="form-select">
                         <option value="1">дом стоит</option>
-                        <option value="2">блять я хз</option>
+                        <option value="2">дом не стоит</option>
                         <option value="3">какие у нас там состояния</option>
                         <option value="4">ну вы там по красоте сделайте</option>
                         <option value="5">чтобы потом не стыдно за это было</option>
@@ -160,7 +160,7 @@
                     <label for="fullcondition" class="form-label">Состояние объекта</label>
                     <select id="fullcondition" name="fullcondition" class="form-select">
                         <option value="1">дом стоит</option>
-                        <option value="2">блять я хз</option>
+                        <option value="2">дом не стоит</option>
                         <option value="3">какие у нас там состояния</option>
                         <option value="4">ну вы там по красоте сделайте</option>
                         <option value="5">чтобы потом не стыдно за это было</option>
@@ -173,7 +173,7 @@
                     <input type="text" id="user" name="user" class="form-control"></div>
                 <div class="mb-3">
                     <label for="dateappeal" class="form-label">Дата обращения</label>
-                    <input type="date" id="dateappeal" name="dateappeal" ></div>
+                    <input type="date" id="dateappeal" name="dateappeal"></div>
                 <div class="mb-3">
                     <label for="hendcor" class="form-label">Ручная корректировка</label>
                     <input type="checkbox" id="dateappeal" name="dateappeal" class="form-check-input"></div>
@@ -181,15 +181,18 @@
                     <label for="commenthandcor" class="form-label">Комментарий к ручной корректировке</label>
                     <input type="text" id="commenthandcor" name="commenthandcor" class="form-control">
                 </div>
-
+                <div class="mb-3">
+                    <label for="povestka" class="form-label">Акктуальная повестка</label>
+                    <input type="checkbox" id="povestka" name="povestka" class="form-check-input"></div>
+                <div class="mb-3">
                 <button class="btn btn-primary" type="submit">Подобрать по фильтрам</button>
             </form>
         </div>
     </div>
     {% for card in cards_list %}
         <!--Блок мини-карточки-->
-        <div class="mini-card">
-            <div class="container">
+        <div class="container">
+            <div class="mini-card">
                 <div class="row">
                     <img class="col-3" src="{{ card.object_photo }}" alt="Изображение объекта">
                     <div class="col-9">
